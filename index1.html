@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReRoot Club | Dignified Living Delhi NCR</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-[100] transition-all duration-500 px-6 py-4" id="navbar">
+        <div class="max-w-7xl mx-auto flex items-center justify-between bg-white/80 backdrop-blur-md rounded-3xl px-8 py-4 shadow-sm border border-orange-50">
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <div class="w-10 h-10 bg-[#2D5A27] rounded-xl rotate-3 group-hover:rotate-12 transition-transform flex items-center justify-center">
+                    <i data-lucide="heart" class="text-white w-6 h-6"></i>
+                </div>
+                <span class="text-2xl font-extrabold tracking-tighter text-[#2D5A27]">ReRoot<span class="text-[#BC544B]">Club</span></span>
+            </div>
+            
+            <div class="hidden lg:flex gap-10 font-bold text-gray-700">
+                <a href="#about" class="hover:text-[#BC544B] transition-colors">About</a>
+                <a href="#services" class="hover:text-[#BC544B] transition-colors">Services</a>
+                <a href="#truth" class="hover:text-[#BC544B] transition-colors">The Truth</a>
+            </div>
+
+            <button class="bg-[#2D5A27] text-white px-8 py-3 rounded-2xl font-bold hover:bg-black transition-all pulse-soft">
+                Talk to Us
+            </button>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center pt-24 overflow-hidden px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+            <div class="reveal">
+                <div class="inline-block px-4 py-1 rounded-full bg-orange-100 text-[#BC544B] font-bold text-sm mb-6">
+                    ✨ DELHI NCR'S MOST TRUSTED COMMUNITY
+                </div>
+                <h1 class="text-6xl lg:text-8xl font-extrabold leading-tight text-gray-900 mb-8">
+                    Ageing is <br> <span class="serif italic text-[#2D5A27]">Beautiful.</span>
+                </h1>
+                <p class="text-2xl text-gray-600 leading-relaxed max-w-lg mb-12">
+                    Not a clinical "home," but a vibrant <span class="text-[#BC544B] font-bold underline decoration-orange-200">Lifestyle Club</span> for your best years.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <button class="px-10 py-5 bg-[#BC544B] text-white rounded-[2rem] text-xl font-extrabold shadow-2xl hover:scale-105 transition-transform">Schedule a Visit</button>
+                    <button class="px-10 py-5 border-2 border-[#2D5A27] text-[#2D5A27] rounded-[2rem] text-xl font-extrabold hover:bg-[#2D5A27] hover:text-white transition-all">Explore Plans</button>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="relative z-10 rounded-[4rem] overflow-hidden border-[12px] border-white shadow-2xl transform -rotate-2 hover:rotate-0 transition-all duration-700">
+                    <img src="https://media.istockphoto.com/id/1150537056/photo/man-spending-time-with-his-father-at-home.jpg?s=612x612&w=0&k=20&c=puOo33-qYG1pl03vMiAh1hDxSL_8Q0C2APwN8L7l2Do=" 
+                         alt="Family Connection" class="w-full h-[600px] object-cover">
+                </div>
+
+                <div class="absolute -top-6 -right-6 z-20 bouncy-badge bg-white p-6 rounded-3xl shadow-xl border border-orange-100 max-w-[200px]">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center text-[#BC544B]">❤️</div>
+                        <span class="font-extrabold text-[#BC544B]">Dil Se Care</span>
+                    </div>
+                    <p class="text-xs text-gray-500 font-semibold uppercase">Heart-centered approach to living.</p>
+                </div>
+
+                <div class="absolute bottom-10 -left-10 z-20 bouncy-badge-delayed bg-[#2D5A27] p-6 rounded-3xl shadow-xl text-white max-w-[220px]">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i data-lucide="users" class="w-6 h-6 text-orange-200"></i>
+                        <span class="font-extrabold">Apno Jaisa</span>
+                    </div>
+                    <p class="text-sm opacity-80">Neighbors who become your chosen family.</p>
+                </div>
+
+                <div class="absolute -bottom-4 right-10 z-20 bouncy-badge bg-[#DAA520] p-4 rounded-2xl shadow-xl text-white">
+                    <span class="font-black text-lg">0% Isolation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="truth" class="py-28 bg-white overflow-hidden relative">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-5xl font-extrabold mb-6">The <span class="text-[#BC544B]">Truth.</span></h2>
+                <p class="text-xl text-gray-500">Transparent answers for the questions that weigh on your heart.</p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="reveal qa-card border-2 border-orange-50 rounded-[2.5rem] overflow-hidden bg-[#FFFDF5] shadow-sm">
+                    <button onclick="toggleFaq(1)" class="w-full flex items-center justify-between p-10 text-left relative overflow-hidden group">
+                        <div class="flex items-center gap-6 relative z-10">
+                            <span class="qa-number text-5xl font-black">01</span>
+                            <span class="text-2xl font-bold tracking-tight text-gray-800 leading-snug">"Am I 'abandoning' my parents by choosing this?"</span>
+                        </div>
+                        <div id="circle-1" class="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-md transition-all shrink-0">
+                            <i data-lucide="plus" id="icon-1" class="text-[#BC544B] transition-transform"></i>
+                        </div>
+                    </button>
+                    <div id="ans-1" class="hidden p-12 pt-0 text-xl leading-relaxed text-gray-600 border-l-[6px] border-[#2D5A27] ml-10 mb-10">
+                        Choosing ReRoot is an act of <strong>love</strong>, not abandonment. In our community, your parents get 24/7 engagement, medical safety, and peers—things that are hard to provide in a busy modern household. You aren't losing them; you're giving them their own vibrant social life back.
+                    </div>
+                </div>
+
+                <div class="reveal qa-card border-2 border-orange-50 rounded-[2.5rem] overflow-hidden bg-[#FFFDF5] shadow-sm">
+                    <button onclick="toggleFaq(2)" class="w-full flex items-center justify-between p-10 text-left group">
+                        <div class="flex items-center gap-6 relative z-10">
+                            <span class="qa-number text-5xl font-black">02</span>
+                            <span class="text-2xl font-bold tracking-tight text-gray-800 leading-snug">"Is it clinical like a hospital?"</span>
+                        </div>
+                        <div id="circle-2" class="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-md transition-all shrink-0">
+                            <i data-lucide="plus" id="icon-2" class="text-[#BC544B] transition-transform"></i>
+                        </div>
+                    </button>
+                    <div id="ans-2" class="hidden p-12 pt-0 text-xl leading-relaxed text-gray-600 border-l-[6px] border-[#2D5A27] ml-10 mb-10">
+                        Quite the opposite. We hide the "clinical" behind the "comfortable." Our medical team wears friendly attire, not lab coats. Emergency tech is non-intrusive, and our rooms feel like a luxury boutique hotel, not a ward.
+                    </div>
+                </div>
+
+                <div class="reveal qa-card border-2 border-orange-50 rounded-[2.5rem] overflow-hidden bg-[#FFFDF5] shadow-sm">
+                    <button onclick="toggleFaq(3)" class="w-full flex items-center justify-between p-10 text-left group">
+                        <div class="flex items-center gap-6 relative z-10">
+                            <span class="qa-number text-5xl font-black">03</span>
+                            <span class="text-2xl font-bold tracking-tight text-gray-800 leading-snug">"What if they don't like the food?"</span>
+                        </div>
+                        <div id="circle-3" class="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-md transition-all shrink-0">
+                            <i data-lucide="plus" id="icon-3" class="text-[#BC544B] transition-transform"></i>
+                        </div>
+                    </button>
+                    <div id="ans-3" class="hidden p-12 pt-0 text-xl leading-relaxed text-gray-600 border-l-[6px] border-[#2D5A27] ml-10 mb-10">
+                        Our kitchen is the heart of ReRoot. We have a "Ghar Jaisa" menu with nutritionists who ensure low-oil, low-spice meals without sacrificing the <em>swaad</em>. Plus, if Mom wants to cook her signature dish, our community kitchen is always open!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-24 rounded-t-[4rem]">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20">
+            <div>
+                <h3 class="text-5xl font-extrabold mb-8 serif italic text-orange-200">Come home to ReRoot.</h3>
+                <p class="text-xl text-gray-400 mb-10 font-medium">We respond within 12 hours. Your family’s comfort is our priority.</p>
+                <div class="flex gap-4">
+                    <div class="p-4 bg-gray-800 rounded-2xl">
+                        <p class="text-sm text-gray-500 uppercase font-bold">Call Us</p>
+                        <p class="text-xl font-bold">+91 98XXX XXXXX</p>
+                    </div>
+                    <div class="p-4 bg-gray-800 rounded-2xl">
+                        <p class="text-sm text-gray-500 uppercase font-bold">Location</p>
+                        <p class="text-xl font-bold">Delhi NCR</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col justify-end">
+                <div class="text-right">
+                    <p class="text-gray-500 mb-4 font-bold tracking-widest uppercase">© 2025 REROOT CLUB</p>
+                    <p class="text-4xl font-bold italic serif">Dignity. Community. Joy.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
