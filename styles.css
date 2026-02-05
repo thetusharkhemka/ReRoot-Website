@@ -17,8 +17,8 @@
     --pink-accent: #FF6B9D;
     --blue-accent: #5B8DEF;
     
-    /* Typography */
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    /* Typography - Plus Jakarta Sans Professional Font */
+    --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-size-base: 18px;
     --font-size-large: 24px;
     --font-size-xl: 32px;
@@ -42,7 +42,6 @@
     --shadow-medium: 0 8px 30px rgba(46, 168, 159, 0.15);
     --shadow-large: 0 12px 40px rgba(46, 168, 159, 0.2);
 }
-
 /* ============================================
    Reset & Base
    ============================================ */
@@ -63,9 +62,39 @@ body {
     font-size: var(--font-size-base);
     line-height: 1.7;
     color: var(--dark-charcoal);
-    background-color: var(--cream);
+    background: linear-gradient(180deg, #E8F9F7 0%, #D4F4F0 50%, #E8F9F7 100%);
+    min-height: 100vh;
     overflow-x: hidden;
-    cursor: none; /* Hide default cursor */
+    cursor: none;
+}
+
+/* Global floating background elements */
+body::before {
+    content: '';
+    position: fixed;
+    top: 10%;
+    right: -5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.4) 0%, rgba(78, 205, 196, 0.15) 40%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: floatSlow 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    bottom: 5%;
+    left: -5%;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.38) 0%, rgba(78, 205, 196, 0.12) 40%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: floatSlow 22s ease-in-out infinite reverse;
+    pointer-events: none;
 }
 
 /* ============================================
@@ -102,19 +131,8 @@ body {
     will-change: transform;
 }
 
-/* Cursor hover states are handled by JavaScript */
-
 /* ============================================
    Navigation
-   ============================================ */
-/* ============================================
-   Navigation - Vibrant (UPDATED)
-   ============================================ */
-/* ============================================
-   Navigation - White Background (UPDATED)
-   ============================================ */
-/* ============================================
-   Navigation - Clean White with Teal Accent (UPDATED)
    ============================================ */
 
 .navbar {
@@ -124,7 +142,7 @@ body {
     right: 0;
     z-index: 1000;
     padding: 1.25rem 0;
-    background: rgba(255, 255, 255, 0.98);
+    background: #FEFBF4;
     backdrop-filter: blur(20px);
     box-shadow: 0 2px 20px rgba(78, 205, 196, 0.15);
     transition: all var(--transition-normal);
@@ -153,20 +171,23 @@ body {
 }
 
 .logo-img {
-    height: 72px;
+    height: 80px;
     width: auto;
     object-fit: contain;
     transition: transform var(--transition-slow);
-    filter: drop-shadow(0 4px 12px rgba(78, 205, 196, 0.2));
+    filter: none;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
 }
 
 .logo:hover {
-    transform: translateY(-2px) scale(1.05);
+    transform: none;
 }
 
 .logo:hover .logo-img {
-    transform: scale(1.1);
-    filter: drop-shadow(0 6px 16px rgba(78, 205, 196, 0.35));
+    transform: none;
+    filter: none;
 }
 
 .cta-nav {
@@ -201,21 +222,9 @@ body {
     transform: translateY(-2px);
     box-shadow: var(--shadow-medium);
 }
-/* ============================================
-   Hero Section - ENHANCED WITH DESIGN ELEMENTS
-   ============================================ */
 
 /* ============================================
-   Hero Section - ENHANCED WITH BETTER CIRCLES
-   ============================================ */
-/* ============================================
-   Hero Section - STUNNING DESIGN ELEMENTS
-   ============================================ */
-/* ============================================
-   Hero Section - CLEAN & ELEGANT DESIGN
-   ============================================ */
-/* ============================================
-   Hero Section - NO BOX, MORE DECORATIVE ELEMENTS
+   Hero Section - WITH LARGE POP-UP CIRCLES + TEAL DECORATIVE CIRCLES
    ============================================ */
 
 .hero {
@@ -249,7 +258,8 @@ body {
     height: 600px;
     background: radial-gradient(circle, rgba(78, 205, 196, 0.25) 0%, transparent 70%);
     border-radius: 50%;
-    animation: floatSlow 35s ease-in-out infinite;
+    filter: blur(80px);
+    animation: floatSlow 15s ease-in-out infinite;
     will-change: transform;
     transform: translateZ(0);
 }
@@ -263,7 +273,8 @@ body {
     height: 500px;
     background: radial-gradient(circle, rgba(78, 205, 196, 0.2) 0%, transparent 70%);
     border-radius: 50%;
-    animation: floatSlow 40s ease-in-out infinite reverse;
+    filter: blur(80px);
+    animation: floatSlow 18s ease-in-out infinite reverse;
     will-change: transform;
     transform: translateZ(0);
 }
@@ -291,7 +302,7 @@ body {
     top: 20%;
     left: 10%;
     background: radial-gradient(circle, rgba(78, 205, 196, 0.4) 0%, transparent 70%);
-    animation: floatSlow 25s ease-in-out infinite;
+    animation: floatSlow 12s ease-in-out infinite;
     will-change: transform;
     transform: translateZ(0);
 }
@@ -302,7 +313,7 @@ body {
     top: 60%;
     right: 15%;
     background: radial-gradient(circle, rgba(78, 205, 196, 0.35) 0%, transparent 70%);
-    animation: floatSlow 30s ease-in-out infinite reverse;
+    animation: floatSlow 14s ease-in-out infinite reverse;
     will-change: transform;
     transform: translateZ(0);
 }
@@ -313,7 +324,7 @@ body {
     bottom: 20%;
     left: 50%;
     background: radial-gradient(circle, rgba(78, 205, 196, 0.3) 0%, transparent 70%);
-    animation: floatSlow 28s ease-in-out infinite;
+    animation: floatSlow 13s ease-in-out infinite;
     will-change: transform;
     transform: translateZ(0);
 }
@@ -361,7 +372,6 @@ body {
     position: relative;
 }
 
-/* Decorative line above title */
 .hero-title::before {
     content: '';
     position: absolute;
@@ -448,145 +458,191 @@ body {
     }
 }
 
-/* DECORATIVE CIRCLES - Multiple sizes */
+/* TEAL DECORATIVE CIRCLES - VISIBLE ON WHITE & TEAL BACKGROUNDS */
 @media (min-width: 768px) {
-    /* Large circle - top left */
+    /* Large pop-up circles */
     .hero::before {
         content: '';
         position: absolute;
-        top: 15%;
-        left: 8%;
-        width: 200px;
-        height: 200px;
-        border: 3px solid rgba(78, 205, 196, 0.15);
+        top: -20%;
+        right: -8%;
+        width: 550px;
+        height: 550px;
+        background: radial-gradient(circle, rgba(78, 205, 196, 0.5) 0%, rgba(78, 205, 196, 0.2) 40%, transparent 70%);
         border-radius: 50%;
         z-index: 0;
-        animation: floatSlow 35s ease-in-out infinite;
+        animation: floatSlow 20s ease-in-out infinite;
     }
     
-    /* Medium circle - top right */
     .hero::after {
         content: '';
         position: absolute;
-        top: 20%;
-        right: 10%;
-        width: 120px;
-        height: 120px;
-        border: 2px solid rgba(78, 205, 196, 0.2);
+        bottom: -25%;
+        left: -10%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(78, 205, 196, 0.45) 0%, rgba(78, 205, 196, 0.18) 40%, transparent 70%);
         border-radius: 50%;
         z-index: 0;
-        animation: floatSlow 32s ease-in-out infinite reverse;
+        animation: floatSlow 18s ease-in-out infinite reverse;
     }
     
-    /* Small circle - bottom left */
     .floating-elements::before {
         content: '';
         position: absolute;
-        bottom: 20%;
-        left: 12%;
-        width: 80px;
-        height: 80px;
-        border: 2px dashed rgba(78, 205, 196, 0.2);
+        top: 35%;
+        left: -5%;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(78, 205, 196, 0.4) 0%, rgba(78, 205, 196, 0.15) 40%, transparent 70%);
         border-radius: 50%;
-        animation: floatSlow 30s ease-in-out infinite;
+        animation: floatSlow 16s ease-in-out infinite;
     }
     
-    /* Diamond shape - bottom right */
     .floating-elements::after {
         content: '';
         position: absolute;
-        bottom: 25%;
-        right: 8%;
-        width: 90px;
-        height: 90px;
-        background: rgba(78, 205, 196, 0.08);
-        border: 2px solid rgba(78, 205, 196, 0.15);
-        border-radius: 15px;
-        transform: rotate(45deg);
-        animation: floatSlowRotate 40s ease-in-out infinite;
+        top: 50%;
+        right: -8%;
+        width: 420px;
+        height: 420px;
+        background: radial-gradient(circle, rgba(78, 205, 196, 0.38) 0%, rgba(78, 205, 196, 0.14) 40%, transparent 70%);
+        border-radius: 50%;
+        animation: floatSlow 17s ease-in-out infinite reverse;
     }
     
-    /* Additional small circles */
+    /* Teal outline circles - now visible everywhere! */
     .hero-content::before {
         content: '';
         position: absolute;
-        top: 10%;
-        right: -15%;
-        width: 60px;
-        height: 60px;
-        border: 2px solid rgba(78, 205, 196, 0.2);
+        top: -10%;
+        left: -20%;
+        width: 120px;
+        height: 120px;
+        background: rgba(78, 205, 196, 0.08);
+        border: 3px solid rgba(78, 205, 196, 0.3);
         border-radius: 50%;
-        animation: floatSlow 28s ease-in-out infinite reverse;
+        z-index: 0;
+        animation: floatSlow 14s ease-in-out infinite;
     }
     
     .hero-content::after {
         content: '';
         position: absolute;
-        bottom: 15%;
-        left: -12%;
-        width: 50px;
-        height: 50px;
-        border: 2px solid rgba(78, 205, 196, 0.15);
-        border-radius: 50%;
-        animation: floatSlow 33s ease-in-out infinite;
-    }
-    
-    /* Tiny decorative circles */
-    .hero-subtitle::before {
-        content: '';
-        position: absolute;
-        top: -30px;
-        left: 10%;
-        width: 30px;
-        height: 30px;
-        border: 2px solid rgba(78, 205, 196, 0.15);
-        border-radius: 50%;
-        animation: floatSlow 26s ease-in-out infinite;
-    }
-    
-    .hero-subtitle::after {
-        content: '';
-        position: absolute;
-        bottom: -40px;
-        right: 15%;
-        width: 35px;
-        height: 35px;
-        border: 2px dashed rgba(78, 205, 196, 0.15);
-        border-radius: 50%;
-        animation: floatSlow 29s ease-in-out infinite reverse;
-    }
-    
-    /* Small square */
-    .hero-cta::before {
-        content: '';
-        position: absolute;
-        top: -60px;
-        left: -80px;
-        width: 40px;
-        height: 40px;
+        bottom: -15%;
+        right: -18%;
+        width: 100px;
+        height: 100px;
         background: rgba(78, 205, 196, 0.06);
-        border: 2px solid rgba(78, 205, 196, 0.15);
-        border-radius: 8px;
-        transform: rotate(20deg);
-        animation: floatSlowRotate 38s ease-in-out infinite;
-    }
-    
-    /* Another diamond */
-    .hero-cta::after {
-        content: '';
-        position: absolute;
-        bottom: -50px;
-        right: -70px;
-        width: 45px;
-        height: 45px;
-        border: 2px solid rgba(78, 205, 196, 0.15);
-        border-radius: 10px;
-        transform: rotate(45deg);
-        animation: floatSlowRotate 36s ease-in-out infinite reverse;
+        border: 2px solid rgba(78, 205, 196, 0.25);
+        border-radius: 50%;
+        z-index: 0;
+        animation: floatSlow 15s ease-in-out infinite reverse;
     }
 }
 
-/* Additional decorative elements on larger screens */
+@media (min-width: 1024px) {
+    /* Small teal circle near subtitle */
+    .hero-subtitle::before {
+        content: '';
+        position: absolute;
+        top: -25%;
+        right: -15%;
+        width: 70px;
+        height: 70px;
+        background: rgba(78, 205, 196, 0.06);
+        border: 2px solid rgba(78, 205, 196, 0.25);
+        border-radius: 50%;
+        animation: floatSlow 13s ease-in-out infinite;
+    }
+    
+    /* Small teal circle near CTA */
+    .hero-cta::before {
+        content: '';
+        position: absolute;
+        bottom: -80%;
+        left: -25%;
+        width: 65px;
+        height: 65px;
+        background: rgba(78, 205, 196, 0.06);
+        border: 2px solid rgba(78, 205, 196, 0.25);
+        border-radius: 50%;
+        animation: floatSlow 14s ease-in-out infinite reverse;
+    }
+    
+    /* Extra decorative circles - top area */
+    .hero-title::after {
+        content: '';
+        position: absolute;
+        top: -15%;
+        right: -25%;
+        width: 50px;
+        height: 50px;
+        border: 2px dashed rgba(78, 205, 196, 0.2);
+        border-radius: 50%;
+        animation: floatSlow 12s ease-in-out infinite;
+        z-index: 0;
+    }
+    
+    /* Extra circle near subtitle - left side */
+    .hero-subtitle::after {
+        content: '';
+        position: absolute;
+        bottom: -20%;
+        left: -18%;
+        width: 55px;
+        height: 55px;
+        background: rgba(78, 205, 196, 0.05);
+        border: 2px solid rgba(78, 205, 196, 0.2);
+        border-radius: 50%;
+        animation: floatSlow 16s ease-in-out infinite reverse;
+    }
+    
+    /* Extra circle near CTA - right side */
+    .hero-cta::after {
+        content: '';
+        position: absolute;
+        top: -60%;
+        right: -28%;
+        width: 60px;
+        height: 60px;
+        border: 2px dashed rgba(78, 205, 196, 0.22);
+        border-radius: 50%;
+        animation: floatSlow 15s ease-in-out infinite;
+    }
+}
+
+/* Mobile - teal circles */
+@media (max-width: 767px) {
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 18%;
+        right: 10%;
+        width: 60px;
+        height: 60px;
+        background: rgba(78, 205, 196, 0.08);
+        border: 2px solid rgba(78, 205, 196, 0.25);
+        border-radius: 50%;
+        animation: floatSlow 14s ease-in-out infinite;
+        z-index: 0;
+    }
+    
+    .hero::after {
+        content: '';
+        position: absolute;
+        bottom: 22%;
+        left: 12%;
+        width: 50px;
+        height: 50px;
+        background: rgba(78, 205, 196, 0.06);
+        border: 2px solid rgba(78, 205, 196, 0.22);
+        border-radius: 50%;
+        animation: floatSlow 16s ease-in-out infinite reverse;
+        z-index: 0;
+    }
+}
+
 @media (min-width: 1200px) {
     .hero-background::before {
         box-shadow: 
@@ -711,7 +767,7 @@ body {
 }
 
 .section-divider-1 svg path {
-    fill: white;
+    fill: #F8FFFE;
 }
 
 .section-divider-2 {
@@ -720,7 +776,7 @@ body {
 }
 
 .section-divider-2 svg path {
-    fill: white;
+    fill: #F8FFFE;
 }
 
 .section-divider-3 {
@@ -728,7 +784,7 @@ body {
 }
 
 .section-divider-3 svg path {
-    fill: white;
+    fill: #F8FFFE;
 }
 
 /* ============================================
@@ -739,6 +795,8 @@ section {
     padding: var(--spacing-xl) 0;
     position: relative;
     margin: 0;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FFFE 50%, #FFFFFF 100%);
+    overflow: hidden;
 }
 
 section::before {
@@ -794,23 +852,47 @@ section::before {
    ============================================ */
 
 .services {
-    background: white;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FFFE 50%, #FFFFFF 100%);
     padding: var(--spacing-xl) 0;
     position: relative;
     z-index: 2;
+    overflow: hidden;
+}
+
+/* Add blur circles to services section */
+.services::before {
+    content: '';
+    position: absolute;
+    top: -15%;
+    right: -10%;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: floatSlow 20s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .services::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(78, 205, 196, 0.2) 50%, 
-        transparent 100%);
+    bottom: -15%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: floatSlow 22s ease-in-out infinite reverse;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.services > * {
+    position: relative;
+    z-index: 1;
 }
 
 .services-slider-container {
@@ -939,23 +1021,22 @@ section::before {
 }
 
 .service-card {
-    background: white;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(232, 249, 247, 0.98) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(78, 205, 196, 0.25);
+    box-shadow: 0 10px 40px rgba(78, 205, 196, 0.2);
     padding: var(--spacing-lg);
     border-radius: 24px;
-    box-shadow: var(--shadow-soft);
     transition: all var(--transition-normal);
     cursor: none;
     position: relative;
     overflow: visible;
     transform: translateZ(0);
     will-change: transform;
-
-    /* 🔑 fixes */
     height: 100%;
     display: flex;
     flex-direction: column;
 }
-
 
 .service-bot-illustration {
     margin-bottom: var(--spacing-md);
@@ -1060,10 +1141,29 @@ section::before {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--soft-teal), var(--warm-gold));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform var(--transition-slow);
+}
+
+/* Daily Health Care - Red color */
+.service-card-wrapper[data-service="medicine"] .service-card::before {
+    background: #EF4444;
+}
+
+/* Peace & Spirituality - Blue color */
+.service-card-wrapper[data-service="spiritual"] .service-card::before {
+    background: #3B82F6;
+}
+
+/* Community & Events - Red color */
+.service-card-wrapper[data-service="events"] .service-card::before {
+    background: #DC2626;
+}
+
+/* Cognitive Games - Orange color */
+.service-card-wrapper[data-service="cognitive"] .service-card::before {
+    background: #F97316;
 }
 
 .service-card:hover::before {
@@ -1166,29 +1266,51 @@ section::before {
     opacity: 0.8;
     margin-top: 1rem;
 }
-
 /* ============================================
-   How It Works Section
+   How It Works Section - ULTRA SMOOTH ANIMATIONS
    ============================================ */
 
 .how-it-works {
-    background: white;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FFFE 50%, #FFFFFF 100%);
     padding: var(--spacing-xl) 0;
     position: relative;
     z-index: 2;
+    overflow: hidden;
+}
+
+.how-it-works::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.25) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: floatSlow 18s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .how-it-works::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(244, 162, 97, 0.2) 50%, 
-        transparent 100%);
+    bottom: -15%;
+    left: -8%;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: floatSlow 20s ease-in-out infinite reverse;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.how-it-works > * {
+    position: relative;
+    z-index: 1;
 }
 
 .steps-container {
@@ -1201,7 +1323,19 @@ section::before {
 }
 
 .steps-container::before {
-    display: none; /* Hide center timeline as steps are now alternating */
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: floatSlow 16s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .step-item {
@@ -1212,31 +1346,28 @@ section::before {
     width: 100%;
     padding: 0 var(--spacing-md);
     opacity: 0;
-    transform: translateX(-50px) translateZ(0) scale(0.9);
-    transition: all var(--transition-normal);
+    transform: translateX(-50px) translateZ(0) scale(0.95);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     z-index: 1;
     will-change: transform, opacity;
 }
 
-/* Step 1 - Right aligned (phone left, content right) */
 .step-item[data-step="1"] {
     flex-direction: row;
     justify-content: flex-start;
 }
 
-/* Step 2 - Left aligned (phone right, content left) */
 .step-item[data-step="2"] {
     flex-direction: row-reverse;
     justify-content: flex-start;
-    transform: translateX(50px) translateZ(0) scale(0.9);
+    transform: translateX(50px) translateZ(0) scale(0.95);
 }
 
 .step-item[data-step="2"].visible {
     transform: translateX(0) translateZ(0) scale(1);
 }
 
-/* Step 3 - Right aligned (phone left, content right) */
 .step-item[data-step="3"] {
     flex-direction: row;
     justify-content: flex-start;
@@ -1256,20 +1387,20 @@ section::before {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transform: scale(0.8) translateZ(0);
-    animation: stepPreviewFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    transform: scale(0.9) translateZ(0);
+    animation: stepPreviewFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .step-item[data-step="1"].visible .step-bot-preview {
-    animation-delay: 0.3s;
+    animation-delay: 0.2s;
 }
 
 .step-item[data-step="2"].visible .step-bot-preview {
-    animation-delay: 0.5s;
+    animation-delay: 0.4s;
 }
 
 .step-item[data-step="3"].visible .step-bot-preview {
-    animation-delay: 0.7s;
+    animation-delay: 0.6s;
 }
 
 .whatsapp-phone-mockup {
@@ -1313,24 +1444,24 @@ section::before {
     display: flex;
     gap: 8px;
     align-items: flex-end;
-    animation: messageSlideIn 0.5s ease-out forwards;
+    animation: messageSlideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     opacity: 0;
 }
 
 .step-item[data-step="1"] .chat-message {
-    animation-delay: 0.6s;
+    animation-delay: 0.5s;
 }
 
 .step-item[data-step="2"] .chat-message:nth-child(1) {
-    animation-delay: 0.8s;
+    animation-delay: 0.7s;
 }
 
 .step-item[data-step="2"] .chat-message:nth-child(2) {
-    animation-delay: 1s;
+    animation-delay: 0.9s;
 }
 
 .step-item[data-step="3"] .chat-message {
-    animation-delay: 0.9s;
+    animation-delay: 0.8s;
 }
 
 .chat-message.incoming {
@@ -1380,48 +1511,48 @@ section::before {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* ULTRA SMOOTH ANIMATIONS */
 @keyframes stepPreviewFadeIn {
-    from {
+    0% {
         opacity: 0;
-        transform: scale(0.8) translateZ(0);
+        transform: scale(0.9) translateY(20px) translateZ(0);
     }
-    to {
+    100% {
         opacity: 1;
-        transform: scale(1) translateZ(0);
+        transform: scale(1) translateY(0) translateZ(0);
     }
 }
 
 @keyframes messageSlideIn {
-    from {
+    0% {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(15px) translateZ(0);
     }
-    to {
+    100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) translateZ(0);
     }
 }
 
 .step-item.visible {
     opacity: 1;
     transform: translateX(0) translateZ(0) scale(1);
-    animation: stepPopIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation: stepPopIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .step-item[data-step="1"].visible {
-    animation-delay: 0.3s;
+    animation-delay: 0.1s;
 }
 
 .step-item[data-step="2"].visible {
-    animation-delay: 0.5s;
+    animation-delay: 0.3s;
 }
 
 .step-item[data-step="3"].visible {
-    animation-delay: 0.7s;
+    animation-delay: 0.5s;
 }
 
-/* Remove old nth-child rules as we're using data-step attributes now */
-
+/* ULTRA SMOOTH STEP NUMBER */
 .step-number {
     width: 80px;
     height: 80px;
@@ -1435,7 +1566,7 @@ section::before {
     font-size: var(--font-size-xxl);
     font-weight: 700;
     box-shadow: var(--shadow-medium);
-    transition: all var(--transition-normal);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     transform: translateZ(0);
     will-change: transform;
@@ -1449,12 +1580,12 @@ section::before {
     background: linear-gradient(135deg, var(--soft-teal), var(--warm-gold));
     opacity: 0;
     z-index: -1;
-    transition: opacity var(--transition-normal);
-    animation: pulseRing 2s ease-in-out infinite;
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: pulseRing 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
 
 .step-item:hover .step-number {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.08) rotate(3deg) translateZ(0);
     box-shadow: var(--shadow-large);
 }
 
@@ -1490,31 +1621,29 @@ section::before {
     }
 }
 
+/* ULTRA SMOOTH POP-IN - No Bounce */
 @keyframes stepPopIn {
     0% {
         opacity: 0;
-        transform: translateX(0) translateZ(0) scale(0.8);
-    }
-    60% {
-        transform: translateX(0) translateZ(0) scale(1.05);
+        transform: translateY(30px) translateZ(0) scale(0.95);
     }
     100% {
         opacity: 1;
-        transform: translateX(0) translateZ(0) scale(1);
+        transform: translateY(0) translateZ(0) scale(1);
     }
 }
 
+/* ULTRA SMOOTH PULSE - Gentle & Elegant */
 @keyframes pulseRing {
     0%, 100% {
         opacity: 0;
         transform: scale(1);
     }
     50% {
-        opacity: 0.3;
-        transform: scale(1.2);
+        opacity: 0.2;
+        transform: scale(1.15);
     }
 }
-
 /* ============================================
    Goals Section
    ============================================ */
@@ -1523,8 +1652,44 @@ section::before {
     padding: var(--spacing-xl) 0;
     position: relative;
     overflow: hidden;
-    background: white;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FFFE 50%, #FFFFFF 100%);
     z-index: 2;
+}
+
+/* Add blur circles to goals section */
+.goals-section::before {
+    content: '';
+    position: absolute;
+    top: -15%;
+    right: -12%;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.22) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: floatSlow 19s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.goals-section::after {
+    content: '';
+    position: absolute;
+    bottom: -18%;
+    left: -10%;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: floatSlow 21s ease-in-out infinite reverse;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.goals-section > * {
+    position: relative;
+    z-index: 1;
 }
 
 .goals-background {
@@ -1533,9 +1698,9 @@ section::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, #FFE5D9 0%, #E0F2FE 100%);
+    background: linear-gradient(135deg, rgba(255, 229, 217, 0.3) 0%, rgba(224, 242, 254, 0.3) 100%);
     z-index: -1;
-    opacity: 0.6;
+    opacity: 0.4;
 }
 
 .goals-title {
@@ -1553,12 +1718,14 @@ section::before {
 }
 
 .goal-card {
-    background: white;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(232, 249, 247, 0.98) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(78, 205, 196, 0.25);
+    box-shadow: 0 10px 40px rgba(78, 205, 196, 0.2);
     padding: var(--spacing-lg);
     border-radius: 20px;
     text-align: center;
     transition: all var(--transition-normal);
-    box-shadow: var(--shadow-soft);
     cursor: none;
     position: relative;
     overflow: hidden;
@@ -1574,10 +1741,49 @@ section::before {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--soft-teal), var(--warm-gold));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform var(--transition-normal);
+}
+
+/* Daily Health Care - Red color */
+.goal-card[data-goal="healthcare"]::before {
+    background: #EF4444;
+}
+
+/* Peace & Spirituality - Blue color */
+.goal-card[data-goal="spirituality"]::before {
+    background: #3B82F6;
+}
+
+/* Mind Wellness - Orange color */
+.goal-card[data-goal="mind"]::before {
+    background: #F97316;
+}
+
+/* Community & Events - Red color */
+.goal-card[data-goal="community"]::before {
+    background: #DC2626;
+}
+
+/* Energy & Vitality - Green color */
+.goal-card[data-goal="energy"]::before {
+    background: #10B981;
+}
+
+/* Independence - Purple color */
+.goal-card[data-goal="independence"]::before {
+    background: #8B5CF6;
+}
+
+/* Family Support - Blue color */
+.goal-card[data-goal="family"]::before {
+    background: #3B82F6;
+}
+
+/* Personalized Care - Yellow/Orange color */
+.goal-card[data-goal="personalized"]::before {
+    background: #F59E0B;
 }
 
 .goal-card:hover::before {
@@ -1712,7 +1918,7 @@ section::before {
 }
 
 .section-divider-goals svg path {
-    fill: white;
+    fill: #F8FFFE;
 }
 
 /* ============================================
@@ -1723,21 +1929,44 @@ section::before {
     padding: var(--spacing-xl) 0;
     position: relative;
     overflow: hidden;
-    background: white;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FFFE 50%, #FFFFFF 100%);
     z-index: 2;
+}
+
+/* Add blur circles to trust section */
+.trust-section::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -8%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: floatSlow 17s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .trust-section::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(78, 205, 196, 0.2) 50%, 
-        transparent 100%);
+    bottom: -12%;
+    right: -10%;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: floatSlow 19s ease-in-out infinite reverse;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.trust-section > * {
+    position: relative;
+    z-index: 1;
 }
 
 .trust-background {
@@ -1813,7 +2042,6 @@ section::before {
     z-index: 2;
     padding-bottom: 3.5rem;
     margin-bottom: 0;
-
 }
 
 .cta-content {
@@ -1838,7 +2066,6 @@ section::before {
 .cta-subtitle {
     font-size: var(--font-size-large);
     margin-bottom: var(--spacing-lg);
-    opacity: 0.9;
     opacity: 0;
     transform: translateY(30px);
     transition: all var(--transition-slow);
@@ -1870,7 +2097,6 @@ section::before {
 
 .cta-note {
     font-size: calc(var(--font-size-base) - 2px);
-    opacity: 0.8;
     opacity: 0;
     transform: translateY(30px);
     transition: all var(--transition-slow);
@@ -2243,7 +2469,6 @@ section::before {
         padding: 0 var(--spacing-sm);
     }
     
-    /* Footer Responsive */
     .footer-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
@@ -2356,7 +2581,6 @@ section::before {
         padding: 0 var(--spacing-sm);
     }
     
-    /* Footer Mobile */
     .footer-content {
         gap: var(--spacing-md);
     }
@@ -2408,40 +2632,8 @@ section::before {
     }
 }
 
-/* Focus states for accessibility */
 a:focus,
 button:focus {
     outline: 3px solid var(--soft-teal);
     outline-offset: 2px;
 }
-/* ============================================
-   Accessibility
-   ============================================ */
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-    
-    .cursor,
-    .cursor-follower {
-        display: none;
-    }
-    
-    body {
-        cursor: auto;
-    }
-}
-
-/* Focus states for accessibility */
-a:focus,
-button:focus {
-    outline: 3px solid var(--soft-teal);
-    outline-offset: 2px;
-}
-
-
